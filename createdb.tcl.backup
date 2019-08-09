@@ -1,0 +1,15 @@
+puts "SETTING CONFIGURATION"
+dbset db mssqls
+dbset bm TPC-C
+diset connection mssqls_server 172.29.177.1
+diset connection mssqls_linux_server 172.29.177.1
+diset connection mssqls_port 1433
+diset connection mssqls_uid SA
+diset connection mssqls_pass s3curePasswordString
+diset connection mssqls_tcp true
+diset tpcc mssqls_count_ware 1
+diset tpcc mssqls_num_vu 1
+
+puts "CREATING SCHEMA"
+buildschema
+

@@ -1,0 +1,7 @@
+InstallDir: /usr/local/bin
+InstallMode: Console
+InstallType: Typical
+LaunchApplication: Yes
+ProgramFolderName: HammerDB
+SelectedComponents: Default Component
+
