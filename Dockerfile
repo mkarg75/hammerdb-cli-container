@@ -19,15 +19,20 @@ RUN mkdir /hammer
 RUN chmod 755 hammer_installer
 RUN ./hammer_installer --prefix /hammer --mode silent
 
-RUN chmod g+w /etc/passwd
-COPY createdb.tcl /
-COPY run_test.tcl /
-COPY uid_entrypoint /
+COPY createdb.tcl /hammer
+COPY run_test.tcl /hammer
+COPY uid_entrypoint /usr/local/bin/
 COPY script.exp /hammer
 COPY test.exp /hammer
+COPY entrypoint /usr/local/bin/
+
+RUN chmod g+w /etc/passwd
 RUN chmod 755 /hammer/script.exp
 RUN chmod 755 /hammer/test.exp
-RUN chmod +x /uid_entrypoint
+RUN chmod 755 /usr/local/bin/uid_entrypoint
+RUN chmod 755 /usr/local/bin/entrypoint
+RUN /usr/local/bin/uid_entrypoint
+#ENTRYPOINT [ "/usr/local/bin/entrypoint" ]
 
 
 

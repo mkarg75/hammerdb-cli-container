@@ -49,8 +49,8 @@ match_max 100000
 #expect "*.*\r"
 #send "\r\r"
 #expect "^hammerdb>"
-send -- "source /tmp/createdb.tcl\r"
+send -- "source /config/createdb.tcl\r"
 expect "ALL VIRTUAL USERS COMPLETE"
-send  \x04
-expect eof
+#send  \x04
+#expect eof
 
